@@ -1,0 +1,105 @@
+:root {
+    --bg: #ffffff;
+    --surface: #f4f4f4;
+    --text: #141414;
+    --muted: #5c5c5c;
+    --line: #e2e2e2;
+    --accent: #0e9a07;
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #101010;
+        --surface: #191919;
+        --text: #f2f2f2;
+        --muted: #b0b0b0;
+        --line: #2e2e2e;
+        --accent: #12c709;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 64px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.lang { display: flex; gap: 4px; }
+
+.lang button {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.lang button[aria-pressed="true"] {
+    background: var(--surface);
+    color: var(--text);
+}
+
+h1 { font-size: 34px; line-height: 1.2; margin: 0 0 16px; }
+h2 { font-size: 20px; margin: 36px 0 8px; }
+p, li { color: var(--text); }
+.lead { font-size: 18px; color: var(--muted); }
+.muted { color: var(--muted); font-size: 14px; }
+a { color: var(--accent); }
+
+ul { padding-left: 20px; }
+
+.features {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+    margin: 32px 0;
+}
+
+.features li {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.features b { display: block; margin-bottom: 4px; }
+
+footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+}
+
+[lang="en"] [data-lang="ru"], [lang="ru"] [data-lang="en"] { display: none; }
