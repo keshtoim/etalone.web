@@ -2,52 +2,87 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title data-ru="etalone — дневник силовых тренировок" data-en="etalone — strength training log">etalone — дневник силовых тренировок</title>
     <meta name="description" content="etalone — Android-приложение для записи силовых тренировок с ИИ-тренером. Android strength training log with an AI coach.">
+    <meta name="theme-color" content="#101010">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
+<div class="page">
     <header>
-        <a class="brand" href="./">etalone</a>
-        <div class="lang">
+        <a class="brand" href="./">
+            <svg class="icon" viewBox="30 29.5 120 120" aria-hidden="true"><path fill-rule="evenodd" d="M96.6438 29.5L150.002 82.8572V149.5H83.36L30.001 96.1416L30.0012 67.7886H30L30.001 29.5H96.6438ZM42.0016 41.5V89.5L90.0022 137.5H138.002V89.5L90.0022 41.5H42.0016Z"/></svg>
+            etalone
+        </a>
+        <div class="lang" role="group" aria-label="Language">
             <button type="button" data-set="ru">RU</button>
             <button type="button" data-set="en">EN</button>
         </div>
     </header>
 
-    <section data-lang="ru">
-        <h1>Дневник силовых тренировок</h1>
-        <p class="lead">etalone — Android-приложение, чтобы записывать подходы, следить за прогрессом и получать советы ИИ-тренера. Данные хранятся на телефоне, аккаунт нужен только для резервной копии.</p>
-        <ul class="features">
-            <li><b>Тренировки и шаблоны</b>Подходы, вес, повторения, суперсеты, таймер отдыха и план на неделю.</li>
-            <li><b>Каталог упражнений</b>Больше 170 упражнений с техникой, частыми ошибками и картой мышц.</li>
-            <li><b>ИИ-тренер</b>Советы по весу и технике, программы и разбор тренировок через выбранного тобой провайдера ИИ.</li>
-            <li><b>Ограничения</b>Учёт травм и нежелательных нагрузок с подбором замены упражнениям.</li>
-            <li><b>Импорт</b>Из Strong, Hevy, файлов любого формата и фотографий дневника.</li>
-            <li><b>Резервная копия</b>По желанию: вход через Google, копия в облаке и восстановление на новом телефоне.</li>
-        </ul>
-    </section>
+    <main class="hero">
+        <div>
+            <svg class="icon" viewBox="30 29.5 120 120" aria-hidden="true"><path fill-rule="evenodd" d="M96.6438 29.5L150.002 82.8572V149.5H83.36L30.001 96.1416L30.0012 67.7886H30L30.001 29.5H96.6438ZM42.0016 41.5V89.5L90.0022 137.5H138.002V89.5L90.0022 41.5H42.0016Z"/></svg>
+            <span class="eyebrow"><span data-lang="ru">Математика спорта</span><span data-lang="en">The math of sport</span></span>
+            <h1><span data-lang="ru">Дневник силовых тренировок</span><span data-lang="en">Strength training log</span></h1>
+            <p class="lead" data-lang="ru">Записывай подходы, следи за прогрессом и спрашивай ИИ-тренера. Данные хранятся на телефоне, аккаунт нужен только для резервной копии.</p>
+            <p class="lead" data-lang="en">Log your sets, follow your progress and ask the AI coach. Your data stays on the phone; an account is only needed for the backup.</p>
+            <ul class="tags">
+                <li>Android 8+</li>
+                <li><span data-lang="ru">177 упражнений</span><span data-lang="en">177 exercises</span></li>
+                <li><span data-lang="ru">Без рекламы</span><span data-lang="en">No ads</span></li>
+            </ul>
+        </div>
 
-    <section data-lang="en">
-        <h1>Strength training log</h1>
-        <p class="lead">etalone is an Android app to log your sets, follow your progress and get advice from an AI coach. Your data stays on the phone; an account is only needed for the backup.</p>
-        <ul class="features">
-            <li><b>Workouts and templates</b>Sets, weight, reps, supersets, a rest timer and a weekly plan.</li>
-            <li><b>Exercise catalog</b>Over 170 exercises with technique, common mistakes and a muscle map.</li>
-            <li><b>AI coach</b>Advice on weight and form, programs and workout reviews through the AI provider you pick.</li>
-            <li><b>Restrictions</b>Injuries and loads to avoid, with replacement exercises.</li>
-            <li><b>Import</b>From Strong, Hevy, files in any format and photos of a paper log.</li>
-            <li><b>Backup</b>Optional: sign in with Google, keep a copy in the cloud and restore it on a new phone.</li>
-        </ul>
-    </section>
+        <div class="workout">
+            <div class="workout-head">
+                <b><span data-lang="ru">Жим лёжа</span><span data-lang="en">Bench press</span></b>
+                <span><span data-lang="ru">гриф 20 кг</span><span data-lang="en">20 kg bar</span></span>
+            </div>
+            <ol class="sets">
+                <li class="set"><span class="n">1</span><span class="w">40 <small>kg</small> × 10</span><span class="effort" style="--dot: var(--warmup)"><span data-lang="ru">Разминка</span><span data-lang="en">Warm-up</span></span></li>
+                <li class="set"><span class="n">2</span><span class="w">70 <small>kg</small> × 8</span><span class="effort" style="--dot: var(--green)"><span data-lang="ru">Лёгкий</span><span data-lang="en">Light</span></span></li>
+                <li class="set"><span class="n">3</span><span class="w">80 <small>kg</small> × 6</span><span class="effort" style="--dot: var(--medium)"><span data-lang="ru">Средний</span><span data-lang="en">Medium</span></span></li>
+                <li class="set"><span class="n">4</span><span class="w">85 <small>kg</small> × 5</span><span class="effort" style="--dot: var(--heavy)"><span data-lang="ru">Тяжёлый</span><span data-lang="en">Heavy</span></span></li>
+            </ol>
+            <div class="scale" aria-hidden="true">
+                <i style="--dot: var(--warmup)"></i><i style="--dot: var(--green)"></i><i style="--dot: var(--medium)"></i><i style="--dot: var(--heavy)"></i><i style="--dot: var(--max)"></i>
+            </div>
+            <div class="note">
+                <span data-lang="ru"><b>ИИ-тренер:</b> четвёртый подход шёл тяжело. В следующий раз оставь 85 кг и добери до 3×6.</span>
+                <span data-lang="en"><b>AI coach:</b> the fourth set was hard. Next time keep 85 kg and build up to 3×6.</span>
+            </div>
+        </div>
+    </main>
+
+    <ul class="features">
+        <li><div class="mark" style="--dot: var(--green)"></div><b><span data-lang="ru">Тренировки и шаблоны</span><span data-lang="en">Workouts and templates</span></b><p><span data-lang="ru">Подходы, суперсеты, таймер отдыха и план на неделю с напоминаниями.</span><span data-lang="en">Sets, supersets, a rest timer and a weekly plan with reminders.</span></p></li>
+        <li><div class="mark" style="--dot: var(--pink)"></div><b><span data-lang="ru">Каталог и карта мышц</span><span data-lang="en">Catalog and muscle map</span></b><p><span data-lang="ru">Техника и частые ошибки для каждого упражнения, нагрузка по мышцам.</span><span data-lang="en">Technique and common mistakes for every exercise, load by muscle.</span></p></li>
+        <li><div class="mark" style="--dot: var(--medium)"></div><b><span data-lang="ru">ИИ-тренер</span><span data-lang="en">AI coach</span></b><p><span data-lang="ru">Советы по весу и технике, программы и разбор тренировок через твой ключ Gemini, OpenAI или Claude.</span><span data-lang="en">Advice on weight and form, programs and reviews with your own Gemini, OpenAI or Claude key.</span></p></li>
+        <li><div class="mark" style="--dot: var(--heavy)"></div><b><span data-lang="ru">Травмы и ограничения</span><span data-lang="en">Injuries and limits</span></b><p><span data-lang="ru">Приложение помечает опасные упражнения и предлагает замену.</span><span data-lang="en">Risky exercises are flagged, with replacements offered.</span></p></li>
+        <li><div class="mark" style="--dot: var(--max)"></div><b><span data-lang="ru">Прогресс</span><span data-lang="en">Progress</span></b><p><span data-lang="ru">Рекорды, объём, графики по упражнениям и замеры тела.</span><span data-lang="en">Records, volume, charts per exercise and body measurements.</span></p></li>
+        <li><div class="mark" style="--dot: var(--warmup)"></div><b><span data-lang="ru">Импорт</span><span data-lang="en">Import</span></b><p><span data-lang="ru">Из Strong, Hevy, файлов любого формата и фото бумажного дневника.</span><span data-lang="en">From Strong, Hevy, files in any format and photos of a paper log.</span></p></li>
+    </ul>
+
+    <div class="cloud">
+        <p data-lang="ru"><b>Резервная копия по желанию.</b> Войди через Google, и копия будет храниться в облаке и вернётся на новом телефоне.</p>
+        <p data-lang="en"><b>Optional backup.</b> Sign in with Google to keep a copy in the cloud and get it back on a new phone.</p>
+        <a class="pill" href="privacy.html"><span data-lang="ru">Политика конфиденциальности</span><span data-lang="en">Privacy policy</span></a>
+    </div>
 
     <footer>
-        <a href="privacy.html"><span data-lang="ru">Политика конфиденциальности</span><span data-lang="en">Privacy policy</span></a>
-        <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>
+        <span>© 2026 etalone</span>
+        <nav>
+            <a href="privacy.html"><span data-lang="ru">Конфиденциальность</span><span data-lang="en">Privacy</span></a>
+            <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>
+        </nav>
     </footer>
-</main>
+</div>
 <script src="lang.js"></script>
 </body>
 </html>

@@ -1,105 +1,162 @@
+/* The app's own look: a near-black screen, grey cards, white main action and the effort colours as accents. */
 :root {
-    --bg: #ffffff;
-    --surface: #f4f4f4;
-    --text: #141414;
-    --muted: #5c5c5c;
-    --line: #e2e2e2;
-    --accent: #0e9a07;
-    color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #101010;
-        --surface: #191919;
-        --text: #f2f2f2;
-        --muted: #b0b0b0;
-        --line: #2e2e2e;
-        --accent: #12c709;
-    }
+    --bg: #101010;
+    --card: #191919;
+    --card-high: #252525;
+    --line: #2a2a2a;
+    --fg: #ffffff;
+    --muted: #b0b0b0;
+    --green: #12c709;
+    --green-soft: #11330f;
+    --green-text: #b4f5b4;
+    --pink: #cc0058;
+    --warmup: #8a8a8a;
+    --medium: #f2c04a;
+    --heavy: #c84503;
+    --max: #ff3b4e;
+    --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 
+html { background: var(--bg); }
+
 body {
     margin: 0;
     background: var(--bg);
-    color: var(--text);
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--fg);
+    font: 400 16px/1.5 var(--font);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 
-main {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 24px 16px 64px;
-}
+.page { max-width: 960px; margin: 0 auto; padding-block: 20px 56px; }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 40px;
-}
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
-.brand {
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--text);
-    text-decoration: none;
-}
+.brand { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 18px; }
+.brand .icon { width: 26px; height: 26px; }
 
-.lang { display: flex; gap: 4px; }
+.icon { display: block; flex: none; }
+.icon path { fill: var(--fg); }
 
+.lang { display: flex; background: var(--card); border-radius: 999px; padding: 4px; }
 .lang button {
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--muted);
-    border-radius: 999px;
-    padding: 4px 12px;
-    font: inherit;
-    font-size: 14px;
-    cursor: pointer;
+    border: 0; background: transparent; color: var(--muted);
+    font: 600 13px var(--font); letter-spacing: .04em;
+    padding: 6px 14px; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--fg); color: #000; }
+.lang button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+.eyebrow {
+    display: block;
+    margin-top: 28px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
 }
 
-.lang button[aria-pressed="true"] {
-    background: var(--surface);
-    color: var(--text);
+h1 {
+    font-size: clamp(34px, 6vw, 56px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    margin: 10px 0 16px;
+    text-wrap: balance;
 }
 
-h1 { font-size: 34px; line-height: 1.2; margin: 0 0 16px; }
-h2 { font-size: 20px; margin: 36px 0 8px; }
-p, li { color: var(--text); }
-.lead { font-size: 18px; color: var(--muted); }
-.muted { color: var(--muted); font-size: 14px; }
-a { color: var(--accent); }
+.lead { color: var(--muted); font-size: 17px; max-width: 34em; margin: 0; }
 
-ul { padding-left: 20px; }
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+    margin-top: 56px;
+}
+.hero .icon { width: 64px; height: 64px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
+.tags li { background: var(--card-high); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500; }
+
+/* A card from the workout screen: the set log with its effort colours. */
+.workout { background: var(--card); border-radius: 24px; padding: 20px; min-width: 0; }
+.workout-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.workout-head b { font-size: 18px; font-weight: 600; }
+.workout-head span { color: var(--muted); font-size: 13px; }
+
+.sets { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 8px; }
+.set {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-high);
+    border-radius: 14px;
+    padding: 10px 14px;
+    font-variant-numeric: tabular-nums;
+}
+.set .n { color: var(--muted); font-size: 13px; font-weight: 600; }
+.set .w { font-weight: 600; }
+.set .w small { color: var(--muted); font-weight: 500; font-size: 13px; }
+.effort { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--muted); }
+.effort::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--dot); }
+
+.scale { display: flex; gap: 4px; margin-top: 16px; }
+.scale i { flex: 1; height: 6px; border-radius: 3px; background: var(--dot); }
+
+.note { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: var(--green-soft); color: var(--green-text); font-size: 13px; }
+.note b { color: var(--green); font-weight: 600; }
 
 .features {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
+    margin: 64px 0 0;
     padding: 0;
     list-style: none;
-    margin: 32px 0;
 }
+.features li { background: var(--card); border-radius: 20px; padding: 20px; }
+.features b { display: block; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.features p { margin: 0; color: var(--muted); font-size: 14px; }
+.mark { width: 28px; height: 4px; border-radius: 2px; background: var(--dot); margin-bottom: 16px; }
 
-.features li {
-    background: var(--surface);
-    border-radius: 16px;
-    padding: 16px;
+.cloud {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 12px; background: var(--card); border-radius: 20px; padding: 20px;
 }
+.cloud p { margin: 0; color: var(--muted); font-size: 14px; max-width: 42em; }
+.cloud b { color: var(--fg); font-weight: 600; }
+.pill { background: var(--fg); color: #000; border-radius: 999px; padding: 12px 20px; font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; }
 
-.features b { display: block; margin-bottom: 4px; }
+/* The privacy policy: one readable column of cards. */
+.doc { max-width: 720px; margin: 48px auto 0; }
+.doc h1 { font-size: clamp(30px, 5vw, 44px); }
+.doc .date { color: var(--muted); font-size: 13px; margin: 0; }
+.doc .intro { color: var(--muted); font-size: 17px; margin: 20px 0 0; }
+.doc section { background: var(--card); border-radius: 20px; padding: 20px; margin-top: 12px; }
+.doc h2 { font-size: 17px; font-weight: 600; margin: 0 0 8px; }
+.doc p, .doc li { color: var(--muted); font-size: 15px; }
+.doc p { margin: 0; }
+.doc p + p { margin-top: 10px; }
+.doc ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.doc a { color: var(--fg); }
 
 footer {
-    margin-top: 48px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    font-size: 14px;
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+    color: var(--muted); font-size: 13px;
 }
+footer a { color: var(--fg); text-decoration: none; font-weight: 500; }
+footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
 
 [lang="en"] [data-lang="ru"], [lang="ru"] [data-lang="en"] { display: none; }
+
+@media (max-width: 760px) {
+    .hero { grid-template-columns: minmax(0, 1fr); margin-top: 32px; gap: 32px; }
+    .features { grid-template-columns: minmax(0, 1fr); }
+}

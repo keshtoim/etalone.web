@@ -2,95 +2,140 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title data-ru="Политика конфиденциальности — etalone" data-en="Privacy policy — etalone">Политика конфиденциальности — etalone</title>
+    <meta name="theme-color" content="#101010">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
+<div class="page">
     <header>
-        <a class="brand" href="./">etalone</a>
-        <div class="lang">
+        <a class="brand" href="./">
+            <svg class="icon" viewBox="30 29.5 120 120" aria-hidden="true"><path fill-rule="evenodd" d="M96.6438 29.5L150.002 82.8572V149.5H83.36L30.001 96.1416L30.0012 67.7886H30L30.001 29.5H96.6438ZM42.0016 41.5V89.5L90.0022 137.5H138.002V89.5L90.0022 41.5H42.0016Z"/></svg>
+            etalone
+        </a>
+        <div class="lang" role="group" aria-label="Language">
             <button type="button" data-set="ru">RU</button>
             <button type="button" data-set="en">EN</button>
         </div>
     </header>
 
-    <article data-lang="ru">
+    <main class="doc" data-lang="ru">
+        <span class="eyebrow">etalone</span>
         <h1>Политика конфиденциальности</h1>
-        <p class="muted">Действует с 16 ноября 2026 года</p>
-        <p>Эта политика описывает, какие данные обрабатывает Android-приложение etalone, где они хранятся и кому передаются. Приложение не показывает рекламу, не собирает аналитику и не продаёт данные.</p>
+        <p class="date">Действует с 16 ноября 2026 года</p>
+        <p class="intro">Эта политика описывает, какие данные обрабатывает Android-приложение etalone, где они хранятся и кому передаются. Приложение не показывает рекламу, не собирает аналитику и не продаёт данные.</p>
 
-        <h2>Данные на телефоне</h2>
-        <p>Всё, что ты вводишь, хранится на твоём телефоне: тренировки, подходы, шаблоны, упражнения, планы, замеры тела (вес, обхваты, пропорции), анкета (пол, дата рождения, рост, цели) и ограничения по здоровью (травмы и нежелательные нагрузки). Без входа в аккаунт эти данные никуда не отправляются, кроме случаев, описанных ниже.</p>
+        <section>
+            <h2>Данные на телефоне</h2>
+            <p>Всё, что ты вводишь, хранится на твоём телефоне: тренировки, подходы, шаблоны, упражнения, планы, замеры тела (вес, обхваты, пропорции), анкета (пол, дата рождения, рост, цели) и ограничения по здоровью (травмы и нежелательные нагрузки). Без входа в аккаунт эти данные никуда не отправляются, кроме случаев, описанных ниже.</p>
+        </section>
 
-        <h2>Резервная копия в облаке</h2>
-        <p>Вход в аккаунт необязателен. Если ты входишь через Google, приложение получает от Google идентификатор аккаунта, адрес почты, а также имя и фото профиля, если Google их передаёт. Они нужны только чтобы узнать тебя при восстановлении копии.</p>
-        <p>После входа копия перечисленных выше данных с телефона хранится в базе данных на серверах <a href="https://supabase.com/privacy">Supabase</a>. Доступ к копии есть только у твоего аккаунта. Фотографии в облако не загружаются.</p>
+        <section>
+            <h2>Резервная копия в облаке</h2>
+            <p>Вход в аккаунт необязателен. Если ты входишь через Google, приложение получает от Google идентификатор аккаунта, адрес почты, а также имя и фото профиля, если Google их передаёт. Они нужны только чтобы узнать тебя при восстановлении копии.</p>
+            <p>После входа копия перечисленных выше данных с телефона хранится в базе данных на серверах <a href="https://supabase.com/privacy">Supabase</a>. Доступ к копии есть только у твоего аккаунта. Фотографии в облако не загружаются.</p>
+        </section>
 
-        <h2>ИИ-тренер</h2>
-        <p>Функции ИИ работают, только если ты сам включил их и ввёл ключ выбранного провайдера: Google Gemini, OpenAI или Anthropic. Ключ хранится на телефоне в зашифрованном виде. Для ответа приложение отправляет провайдеру напрямую нужные данные: тренировки, анкету, замеры, ограничения, текст вопроса и фотографии, которые ты прикрепил (например, для импорта дневника или оценки пропорций). Эти данные обрабатываются по правилам выбранного провайдера: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.</p>
+        <section>
+            <h2>ИИ-тренер</h2>
+            <p>Функции ИИ работают, только если ты сам включил их и ввёл ключ выбранного провайдера: Google Gemini, OpenAI или Anthropic. Ключ хранится на телефоне в зашифрованном виде. Для ответа приложение отправляет провайдеру напрямую нужные данные: тренировки, анкету, замеры, ограничения, текст вопроса и фотографии, которые ты прикрепил (например, для импорта дневника или оценки пропорций). Эти данные обрабатываются по правилам выбранного провайдера: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.</p>
+        </section>
 
-        <h2>Health Connect</h2>
-        <p>Если ты включишь Health Connect и выдашь разрешения, приложение записывает туда завершённые тренировки и сожжённые калории. Данные из Health Connect приложение не читает.</p>
+        <section>
+            <h2>Health Connect</h2>
+            <p>Если ты включишь Health Connect и выдашь разрешения, приложение записывает туда завершённые тренировки и сожжённые калории. Данные из Health Connect приложение не читает.</p>
+        </section>
 
-        <h2>Обновления</h2>
-        <p>Раз в день приложение запрашивает у GitHub сведения о последней версии и скачивает обновление. При этом GitHub получает обычные данные запроса, например IP-адрес.</p>
+        <section>
+            <h2>Обновления</h2>
+            <p>Раз в день приложение запрашивает у GitHub сведения о последней версии и скачивает обновление. При этом GitHub получает обычные данные запроса, например IP-адрес.</p>
+        </section>
 
-        <h2>Удаление данных</h2>
-        <ul>
-            <li>Данные на телефоне удаляются вместе с приложением или через очистку данных приложения в настройках Android.</li>
-            <li>Чтобы удалить облачную копию и аккаунт, напиши на <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a> с почты, через которую входил. Данные удаляются в течение 30 дней.</li>
-            <li>Отозвать доступ приложения к Google-аккаунту можно на странице <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li>
-        </ul>
+        <section>
+            <h2>Удаление данных</h2>
+            <ul>
+                <li>Данные на телефоне удаляются вместе с приложением или через очистку данных приложения в настройках Android.</li>
+                <li>Чтобы удалить облачную копию и аккаунт, напиши на <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a> с почты, через которую входил. Данные удаляются в течение 30 дней.</li>
+                <li>Отозвать доступ приложения к Google-аккаунту можно на странице <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li>
+            </ul>
+        </section>
 
-        <h2>Дети</h2>
-        <p>Приложение не предназначено для детей младше 13 лет и сознательно не собирает их данные.</p>
+        <section>
+            <h2>Дети</h2>
+            <p>Приложение не предназначено для детей младше 13 лет и сознательно не собирает их данные.</p>
+        </section>
 
-        <h2>Изменения и контакты</h2>
-        <p>Если политика изменится, новая версия появится на этой странице с новой датой. Вопросы — на <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>.</p>
-    </article>
+        <section>
+            <h2>Изменения и контакты</h2>
+            <p>Если политика изменится, новая версия появится на этой странице с новой датой. Вопросы — на <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>.</p>
+        </section>
+    </main>
 
-    <article data-lang="en">
+    <main class="doc" data-lang="en">
+        <span class="eyebrow">etalone</span>
         <h1>Privacy policy</h1>
-        <p class="muted">Effective November 16, 2026</p>
-        <p>This policy describes what data the etalone Android app handles, where it is kept and who it is shared with. The app shows no ads, collects no analytics and sells no data.</p>
+        <p class="date">Effective November 16, 2026</p>
+        <p class="intro">This policy describes what data the etalone Android app handles, where it is kept and who it is shared with. The app shows no ads, collects no analytics and sells no data.</p>
 
-        <h2>Data on your phone</h2>
-        <p>Everything you enter stays on your phone: workouts, sets, templates, exercises, plans, body measurements (weight, girths, proportions), your profile (sex, date of birth, height, goals) and health restrictions (injuries and loads to avoid). Without signing in, this data is not sent anywhere except as described below.</p>
+        <section>
+            <h2>Data on your phone</h2>
+            <p>Everything you enter stays on your phone: workouts, sets, templates, exercises, plans, body measurements (weight, girths, proportions), your profile (sex, date of birth, height, goals) and health restrictions (injuries and loads to avoid). Without signing in, this data is not sent anywhere except as described below.</p>
+        </section>
 
-        <h2>Cloud backup</h2>
-        <p>Signing in is optional. If you sign in with Google, the app receives your account ID and email address from Google, and your name and profile photo if Google provides them. They are used only to recognize you when restoring the backup.</p>
-        <p>Once you are signed in, a copy of the data listed above is stored in a database on <a href="https://supabase.com/privacy">Supabase</a> servers. Only your account can access it. Photos are not uploaded to the cloud.</p>
+        <section>
+            <h2>Cloud backup</h2>
+            <p>Signing in is optional. If you sign in with Google, the app receives your account ID and email address from Google, and your name and profile photo if Google provides them. They are used only to recognize you when restoring the backup.</p>
+            <p>Once you are signed in, a copy of the data listed above is stored in a database on <a href="https://supabase.com/privacy">Supabase</a> servers. Only your account can access it. Photos are not uploaded to the cloud.</p>
+        </section>
 
-        <h2>AI coach</h2>
-        <p>AI features work only if you turn them on and enter a key for the provider you choose: Google Gemini, OpenAI or Anthropic. The key is stored encrypted on your phone. To answer, the app sends the needed data straight to that provider: workouts, profile, measurements, restrictions, your question and any photos you attach (for example, to import a paper log or estimate proportions). The provider handles this data under its own policy: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.</p>
+        <section>
+            <h2>AI coach</h2>
+            <p>AI features work only if you turn them on and enter a key for the provider you choose: Google Gemini, OpenAI or Anthropic. The key is stored encrypted on your phone. To answer, the app sends the needed data straight to that provider: workouts, profile, measurements, restrictions, your question and any photos you attach (for example, to import a paper log or estimate proportions). The provider handles this data under its own policy: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://openai.com/policies/privacy-policy">OpenAI</a>, <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.</p>
+        </section>
 
-        <h2>Health Connect</h2>
-        <p>If you turn on Health Connect and grant the permissions, the app writes finished workouts and burned calories to it. The app does not read data from Health Connect.</p>
+        <section>
+            <h2>Health Connect</h2>
+            <p>If you turn on Health Connect and grant the permissions, the app writes finished workouts and burned calories to it. The app does not read data from Health Connect.</p>
+        </section>
 
-        <h2>Updates</h2>
-        <p>Once a day the app asks GitHub about the latest version and downloads the update. GitHub receives the usual request data, such as your IP address.</p>
+        <section>
+            <h2>Updates</h2>
+            <p>Once a day the app asks GitHub about the latest version and downloads the update. GitHub receives the usual request data, such as your IP address.</p>
+        </section>
 
-        <h2>Deleting your data</h2>
-        <ul>
-            <li>Data on the phone is deleted with the app or by clearing the app's data in Android settings.</li>
-            <li>To delete the cloud backup and your account, email <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a> from the address you signed in with. The data is deleted within 30 days.</li>
-            <li>You can revoke the app's access to your Google account at <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li>
-        </ul>
+        <section>
+            <h2>Deleting your data</h2>
+            <ul>
+                <li>Data on the phone is deleted with the app or by clearing the app's data in Android settings.</li>
+                <li>To delete the cloud backup and your account, email <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a> from the address you signed in with. The data is deleted within 30 days.</li>
+                <li>You can revoke the app's access to your Google account at <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li>
+            </ul>
+        </section>
 
-        <h2>Children</h2>
-        <p>The app is not intended for children under 13 and does not knowingly collect their data.</p>
+        <section>
+            <h2>Children</h2>
+            <p>The app is not intended for children under 13 and does not knowingly collect their data.</p>
+        </section>
 
-        <h2>Changes and contact</h2>
-        <p>If this policy changes, the new version will appear on this page with a new date. Questions: <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>.</p>
-    </article>
+        <section>
+            <h2>Changes and contact</h2>
+            <p>If this policy changes, the new version will appear on this page with a new date. Questions: <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>.</p>
+        </section>
+    </main>
 
     <footer>
-        <a href="./"><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a>
-        <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>
+        <span>© 2026 etalone</span>
+        <nav>
+            <a href="./"><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a>
+            <a href="mailto:the.pelotrum@gmail.com">the.pelotrum@gmail.com</a>
+        </nav>
     </footer>
-</main>
+</div>
 <script src="lang.js"></script>
 </body>
 </html>
